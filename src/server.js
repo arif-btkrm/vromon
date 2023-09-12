@@ -1,16 +1,17 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const router = require('../routes');
 
 const app = express();
+
 
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(router);
 
-app.get('/health',(_req,res)=>{
-    res.status(200).json({status : 'OK'});
-});
+
 
 const port = process.env.PORT || 4000;
 
