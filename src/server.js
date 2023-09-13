@@ -2,9 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const router = require('../routes');
+const mongoose = require('mongoose');
 
 const app = express();
 
+mongoose.connect("mongodb://127.0.0.1:27017/vromon",{
+    useUnifiedTopology:true
+})
+.then(()=>console.log("Connection Successful"))
+.catch((err)=>console.log(err))
 
 app.use(cors());
 app.use(morgan('dev'));

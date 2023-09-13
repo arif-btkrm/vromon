@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const healthHandler = require('./routeHandler/healthHandler');
 const homeHandler = require('./routeHandler/homeHandler');
-const vehicleHandler = require('./routeHandler/vehicleHandler');
+const {addVehicleHandler,getVehicleHandler} = require('./routeHandler/vehicleHandler');
 const busHandler = require('./routeHandler/busHandler');
 const busRootHandler = require('./routeHandler/busRootHandler');
 const rootHandler = require('./routeHandler/rootHandler');
@@ -17,7 +17,11 @@ router.get('/health', healthHandler);
 router.get('/', homeHandler);
 
 // Get List of vehicle Type
-router.get('/vehicle', vehicleHandler);
+router.get('/vehicle', getVehicleHandler);
+
+// Add a vehicle Type
+router.post('/vehicle', addVehicleHandler);
+
 
 // Get List of All Buses
 router.get('/bus', busHandler);
