@@ -3,7 +3,8 @@ const router = require('express').Router();
 const healthHandler = require('./routeHandler/healthHandler');
 const homeHandler = require('./routeHandler/homeHandler');
 const {addVehicleHandler,getVehicleHandler} = require('./routeHandler/vehicleHandler');
-const busHandler = require('./routeHandler/busHandler');
+const {addBusHandler,getBusHandler} = require('./routeHandler/busHandler');
+const {addRoleHandler,getRoleHandler} = require('./routeHandler/roleHandler');
 const busRootHandler = require('./routeHandler/busRootHandler');
 const rootHandler = require('./routeHandler/rootHandler');
 const signinHandler = require('./routeHandler/signinHandler');
@@ -20,14 +21,16 @@ router.get('/', homeHandler);
 router.get('/vehicle', getVehicleHandler);
 
 // Add a vehicle Type
-router.post('/vehicle', addVehicleHandler);
+router.post('/vehicle', addVehicleHandler); // add midleware to check role
 
 
 // Get List of All Buses
-router.get('/bus', busHandler);
+router.get('/bus', getBusHandler);
+router.post('/bus', addBusHandler); //only for admin
+
 
 // Get available root of a specific Bus
-router.get('/bus/:busName', busRootHandler); 
+router.get('/bus/:id', busRootHandler); 
 
 
 // Get List of available bus of a specific root
@@ -41,5 +44,11 @@ router.post('/user/signup', signupHandler);
 
 // Get List of Tickets of a User
 router.get('/user/ticket', tickethHandler);
+
+// manage role only admin can use this
+router.get('/user/role', getRoleHandler); // midleware need to check is admin or not
+router.post('/user/role', addRoleHandler); // midleware need to check is admin or not
+
+
 
 module.exports = router;

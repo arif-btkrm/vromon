@@ -11,4 +11,4 @@ const roleSchema = mongoose.Schema({
     }
 });
 
-module.exports = vehicleSchema;
+module.exports = roleSchema;

@@ -1,9 +1,8 @@
 
-const Bus = require("./../models/busModel");
+const Role = require("./../models/roleModel");
 
-const getBusHandler = (_req,res) => {
-    Bus.find()
-    .populate("vehicleType", "vehicleType")
+const getRoleHandler = (_req,res) => {
+    Role.find({status : "active"})
     .then((data) => {
         res.status(200).json({
             result : data,
@@ -17,11 +16,11 @@ const getBusHandler = (_req,res) => {
 };
 
 
-const addBusHandler = (_req,res) => {
+const addRoleHandler = (_req,res) => {
     const data = _req.body;
 //    console.log(data)
-    const newBus = new Bus(data);
-    newBus.save()
+    const newRole = new Role(data);
+    newRole.save()
     .then(()=>{
         res.status(200).json({
             message : "Data Inserted Successfully"
@@ -34,4 +33,4 @@ const addBusHandler = (_req,res) => {
     })
 };
 
-module.exports = {getBusHandler,addBusHandler};
+module.exports = {getRoleHandler,addRoleHandler};
