@@ -12,7 +12,12 @@ const busSchema = mongoose.Schema({
         type : mongoose.Types.ObjectId,
         ref: "Vehicle",
         require: true
-    }
+    },
+    busRoot : [{
+        type : mongoose.Types.ObjectId,
+        ref: "Root",
+        require: true
+    }]
 });
 
 module.exports = busSchema;

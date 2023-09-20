@@ -6,10 +6,11 @@ const {addVehicleHandler,getVehicleHandler} = require('./routeHandler/vehicleHan
 const {addBusHandler,getBusHandler} = require('./routeHandler/busHandler');
 const {addRoleHandler,getRoleHandler} = require('./routeHandler/roleHandler');
 const busRootHandler = require('./routeHandler/busRootHandler');
-const rootHandler = require('./routeHandler/rootHandler');
+const {addRootHandler,getRootHandler} = require('./routeHandler/rootHandler');
 const signinHandler = require('./routeHandler/signinHandler');
 const signupHandler = require('./routeHandler/signupHandler');
 const tickethHandler = require('./routeHandler/tickethHandler');
+const {addCityHandler,getCityHandler} = require('./routeHandler/cityHandler');
 
 // Health Check
 router.get('/health', healthHandler);
@@ -34,7 +35,8 @@ router.get('/bus/:id', busRootHandler);
 
 
 // Get List of available bus of a specific root
-router.get('/root', rootHandler); // will take 2 query peram 
+ router.get('/root', getRootHandler); // will take 2 query peram 
+ router.post('/root', addRootHandler) // only Admin 
 
 // User Signin or login
 router.post('/user/signin', signinHandler);
@@ -48,6 +50,10 @@ router.get('/user/ticket', tickethHandler);
 // manage role only admin can use this
 router.get('/user/role', getRoleHandler); // midleware need to check is admin or not
 router.post('/user/role', addRoleHandler); // midleware need to check is admin or not
+
+// manage role only admin can use this
+router.get('/city', getCityHandler); // midleware need to check is admin or not
+router.post('/city', addCityHandler); // midleware need to check is admin or not
 
 
 
