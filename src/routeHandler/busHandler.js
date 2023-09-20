@@ -2,8 +2,9 @@
 const Bus = require("./../models/busModel");
 
 const getBusHandler = (_req,res) => {
+    console.log(_req)
     Bus.find()
-    .populate("vehicleType", "vehicleType")
+    .populate("vehicleType")
     .then((data) => {
         res.status(200).json({
             result : data,
