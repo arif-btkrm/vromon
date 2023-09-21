@@ -1,29 +1,35 @@
 
 const User = require("./../models/userModel");
 const bcrypt = require('bcrypt');
+const JWT = require('jsonwebtoken');
 
 const signInHandler = (_req,res) => {
     const Email = _req.body.email;
     const PassWord = _req.body.password;
      User.find({email:Email,status:"active"})
-    .then( async (data) => {
-        if(data.length>0){
-           // console.log(data[0].password)
-            const checkedPassword = await bcrypt.compare(PassWord,data[0].password);
+    .then( async (userData) => {
+        if(userData.length>0){
+           // console.log(userData[0].password)
+            const checkedPassword = await bcrypt.compare(PassWord,userData[0].password);
            // console.log(checkedPassword)
             if(checkedPassword){
-                console.log("Password Matched")
+               // console.log("Password Matched")
+                const token = JWT.sign({
+                    userName :userData[0].name,
+                    userId : userData[0]._id
+                },process.env.JWT_KEY, {expiresIn : "1h"})
                 res.status(200).json({
-                    result : data,
+                    JWT : token,
+                    message : "Successful"
                 })
             }else{
-                res.status(500).json({
+                res.status(401).json({
                     message : "Wrong Password"
                 })
             }
         }
         else{
-            res.status(500).json({
+            res.status(401).json({
                 message : "User Not Found"
             })    
         }
