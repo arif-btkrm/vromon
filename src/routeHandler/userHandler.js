@@ -7,7 +7,9 @@ const signInHandler = (_req,res) => {
     const Email = _req.body.email;
     const PassWord = _req.body.password;
      User.find({email:Email,status:"active"})
+    .populate('userRole')
     .then( async (userData) => {
+        //console.log(userData[0].userRole.roleName);
         if(userData.length>0){
            // console.log(userData[0].password)
             const checkedPassword = await bcrypt.compare(PassWord,userData[0].password);
@@ -16,7 +18,8 @@ const signInHandler = (_req,res) => {
                // console.log("Password Matched")
                 const token = JWT.sign({
                     userName :userData[0].name,
-                    userId : userData[0]._id
+                    userId : userData[0]._id,
+                    userRole : userData[0].userRole.roleName
                 },process.env.JWT_KEY, {expiresIn : "1h"})
                 res.status(200).json({
                     JWT : token,

@@ -12,6 +12,10 @@ const {signInHandler,signUpHandler} = require('./routeHandler/userHandler');
 const tickethHandler = require('./routeHandler/tickethHandler');
 const {addCityHandler,getCityHandler} = require('./routeHandler/cityHandler');
 
+const isLoggedIn =require('./middlewares/isLoggedIn');
+const isAdmin =require('./middlewares/isAdmin');
+
+
 // Health Check
 router.get('/health', healthHandler);
 
@@ -22,12 +26,12 @@ router.get('/', homeHandler);
 router.get('/vehicle', getVehicleHandler);
 
 // Add a vehicle Type
-router.post('/vehicle', addVehicleHandler); // add midleware to check role
+router.post('/vehicle',isLoggedIn, isAdmin, addVehicleHandler); // add midleware to check role
 
 
 // Get List of All Buses
 router.get('/bus', getBusHandler);
-router.post('/bus', addBusHandler); //only for admin
+router.post('/bus', isLoggedIn,isAdmin, addBusHandler); //only for admin
 
 
 // Get available root of a specific Bus
@@ -36,7 +40,7 @@ router.get('/bus/:id', busRootHandler);
 
 // Get List of available bus of a specific root
  router.get('/root', getRootHandler); // will take 2 query peram 
- router.post('/root', addRootHandler) // only Admin 
+ router.post('/root', isLoggedIn, isLoggedIn, addRootHandler) // only Admin 
 
 // User Signin or login
 router.post('/user/signin', signInHandler);
@@ -45,15 +49,15 @@ router.post('/user/signin', signInHandler);
 router.post('/user/signup', signUpHandler);
 
 // Get List of Tickets of a User
-router.get('/user/ticket', tickethHandler);
+router.get('/user/ticket', isLoggedIn,tickethHandler);
 
 // manage role only admin can use this
-router.get('/user/role', getRoleHandler); // midleware need to check is admin or not
-router.post('/user/role', addRoleHandler); // midleware need to check is admin or not
+router.get('/user/role', isLoggedIn,isAdmin, getRoleHandler); // midleware need to check is admin or not
+router.post('/user/role', isLoggedIn, addRoleHandler); // midleware need to check is admin or not
 
 // manage role only admin can use this
-router.get('/city', getCityHandler); // midleware need to check is admin or not
-router.post('/city', addCityHandler); // midleware need to check is admin or not
+router.get('/city', isLoggedIn,isAdmin, getCityHandler); // midleware need to check is admin or not
+router.post('/city', isLoggedIn, isAdmin, addCityHandler); // midleware need to check is admin or not
 
 
 
