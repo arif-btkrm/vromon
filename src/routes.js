@@ -7,8 +7,8 @@ const {addBusHandler,getBusHandler} = require('./routeHandler/busHandler');
 const {addRoleHandler,getRoleHandler} = require('./routeHandler/roleHandler');
 const busRootHandler = require('./routeHandler/busRootHandler');
 const {addRootHandler,getRootHandler} = require('./routeHandler/rootHandler');
-const signinHandler = require('./routeHandler/signinHandler');
-const signupHandler = require('./routeHandler/signupHandler');
+const {signInHandler,signUpHandler} = require('./routeHandler/userHandler');
+
 const tickethHandler = require('./routeHandler/tickethHandler');
 const {addCityHandler,getCityHandler} = require('./routeHandler/cityHandler');
 
@@ -39,10 +39,10 @@ router.get('/bus/:id', busRootHandler);
  router.post('/root', addRootHandler) // only Admin 
 
 // User Signin or login
-router.post('/user/signin', signinHandler);
+router.post('/user/signin', signInHandler);
 
 // User SignUp of Regester
-router.post('/user/signup', signupHandler);
+router.post('/user/signup', signUpHandler);
 
 // Get List of Tickets of a User
 router.get('/user/ticket', tickethHandler);
