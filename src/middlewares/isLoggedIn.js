@@ -12,6 +12,9 @@ const isLoggedIn = (req,res,next)=>{
         next()
     }
     catch{
+        res.status(401).json({
+            message : "Authentication Failed"
+        }).end()
         next("Authentication Failed");
     }
 }

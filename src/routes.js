@@ -9,7 +9,7 @@ const busRootHandler = require('./routeHandler/busRootHandler');
 const {addRootHandler,getRootHandler} = require('./routeHandler/rootHandler');
 const {signInHandler,signUpHandler} = require('./routeHandler/userHandler');
 
-const {addTicketHandler,getTicketHandler} = require('./routeHandler/tickethHandler');
+const {addTicketHandler,getTicketHandler,deleteTicketHandler} = require('./routeHandler/tickethHandler');
 const {addCityHandler,getCityHandler} = require('./routeHandler/cityHandler');
 
 const isLoggedIn =require('./middlewares/isLoggedIn');
@@ -51,6 +51,8 @@ router.post('/user/signup', signUpHandler);
 // Get List of Tickets of a User
 router.get('/ticket', isLoggedIn,getTicketHandler);
 router.post('/ticket', isLoggedIn,addTicketHandler);
+router.delete('/ticket', isLoggedIn,deleteTicketHandler);
+
 
 
 // manage role only admin can use this

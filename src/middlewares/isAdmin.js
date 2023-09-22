@@ -2,7 +2,7 @@
 const isAdmin = (req,res,next)=>{
     try{
         const userRole = req.userRole;
-        console.log(userRole)
+       // console.log(userRole)
         if(userRole == "Admin"){
             next()
         }
