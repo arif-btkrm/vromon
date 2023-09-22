@@ -60,7 +60,7 @@ const addRootHandler = (_req,res) => {
     const newRoot = new Root(data);
     newRoot.save()
     .then(()=>{
-        res.status(200).json({
+        res.status(201).json({
             message : "Data Inserted Successfully"
         });
     })

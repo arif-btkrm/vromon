@@ -5,12 +5,13 @@ const homeHandler = require('./routeHandler/homeHandler');
 const {addVehicleHandler,getVehicleHandler} = require('./routeHandler/vehicleHandler');
 const {addBusHandler,getBusHandler} = require('./routeHandler/busHandler');
 const {addRoleHandler,getRoleHandler} = require('./routeHandler/roleHandler');
-const busRootHandler = require('./routeHandler/busRootHandler');
+const {getBusRootHandler} = require('./routeHandler/busRootHandler');
 const {addRootHandler,getRootHandler} = require('./routeHandler/rootHandler');
 const {signInHandler,signUpHandler} = require('./routeHandler/userHandler');
 
 const {addTicketHandler,getTicketHandler,deleteTicketHandler} = require('./routeHandler/tickethHandler');
 const {addCityHandler,getCityHandler} = require('./routeHandler/cityHandler');
+const unknownRoute = require('./routeHandler/unknownRouteHandler')
 
 const isLoggedIn =require('./middlewares/isLoggedIn');
 const isAdmin =require('./middlewares/isAdmin');
@@ -35,7 +36,7 @@ router.post('/bus', isLoggedIn,isAdmin, addBusHandler); //only for admin
 
 
 // Get available root of a specific Bus
-router.get('/bus/:id', busRootHandler); 
+router.get('/bus/:id', getBusRootHandler); 
 
 
 // Get List of available bus of a specific root
@@ -63,6 +64,7 @@ router.post('/user/role', isLoggedIn, addRoleHandler); // midleware need to chec
 router.get('/city', isLoggedIn,isAdmin, getCityHandler); // midleware need to check is admin or not
 router.post('/city', isLoggedIn, isAdmin, addCityHandler); // midleware need to check is admin or not
 
-
+// Handle Unknown Route
+router.all('*', unknownRoute);
 
 module.exports = router;

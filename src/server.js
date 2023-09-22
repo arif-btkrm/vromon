@@ -1,30 +1,23 @@
-const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
-const router = require('./routes');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
-const app = express();
+const http = require('http');
+const app = require('./app');
+const { connectDB } = require('./db/connectDB')
 
 dotenv.config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/vromon",{
-    useUnifiedTopology:true
-})
-.then(()=>console.log("Connection Successful"))
-.catch((err)=>console.log(err))
-
-app.use(cors());
-app.use(morgan('dev'));
-app.use(express.json());
-app.use(router);
-
-
-
+const server = http.createServer(app);
 const port = process.env.PORT || 4000;
 
-app.listen(port,()=>{
-    console.log(`Server is listening on PORT ${port}`);
-    console.log(`localhost: ${port}`);
-})
+const main = async () => {
+    try {
+      await connectDB();
+      server.listen(port, async () => {
+        console.log(`Server is Running at http://localhost:${port}`);
+      });
+    } catch (e) {
+      console.log('Database Error');
+      console.log(e);
+    }
+  };
+  
+  main();

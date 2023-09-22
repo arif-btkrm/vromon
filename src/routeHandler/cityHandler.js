@@ -22,7 +22,7 @@ const addCityHandler = (_req,res) => {
     const newCity = new City(data);
     newCity.save()
     .then(()=>{
-        res.status(200).json({
+        res.status(201).json({
             message : "Data Inserted Successfully"
         });
     })

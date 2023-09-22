@@ -60,7 +60,7 @@ const signUpHandler = async (_req,res) => {
 
     await newUser.save()
     .then(()=>{
-        res.status(200).json({
+        res.status(201).json({
             message : "SignUp Successful"
         });
     })

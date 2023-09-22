@@ -21,7 +21,7 @@ const addVehicleHandler = (_req,res) => {
     const newVehicle = new Vehicle(data);
     newVehicle.save()
     .then(()=>{
-        res.status(200).json({
+        res.status(201).json({
             message : "Data Inserted Successfully"
         });
     })

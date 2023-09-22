@@ -22,7 +22,7 @@ const addRoleHandler = (_req,res) => {
     const newRole = new Role(data);
     newRole.save()
     .then(()=>{
-        res.status(200).json({
+        res.status(201).json({
             message : "Data Inserted Successfully"
         });
     })

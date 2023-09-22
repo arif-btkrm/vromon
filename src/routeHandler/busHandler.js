@@ -24,7 +24,7 @@ const addBusHandler = (_req,res) => {
     const newBus = new Bus(data);
     newBus.save()
     .then(()=>{
-        res.status(200).json({
+        res.status(201).json({
             message : "Data Inserted Successfully"
         });
     })

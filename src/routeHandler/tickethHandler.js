@@ -50,7 +50,7 @@ const addTicketHandler = (_req,res) => {
     const newTicket = new Ticket(data);
     newTicket.save()
     .then(()=>{
-        res.status(200).json({
+        res.status(201).json({
             message : "Ticket Booked Successfully"
         });
     })
