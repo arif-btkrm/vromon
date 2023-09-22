@@ -5,16 +5,40 @@ const getRootHandler = async (_req,res) => {
     
    const from = _req.query.from;
    const to = _req.query.to;
+   console.log(to)
+    if(from && to){
+        console.log(from)
+        console.log(to)
+        if(from == '' || to ==''){ // Simple validation will be changed later
+             res.status(500).json({
+                 message : " request with Empty Value"
+             }).end();
+        }
+    } 
+    else{
+        res.status(500).json({
+            message : "Incorrect Request"
+        }).end();
+    }
+    
 
-   const loc1 = await City.find({cityText : from});
-   const loc1Id = loc1[0]._id;
-   const loc2 = await City.find({cityText : to});
-   const loc2Id = loc2[0]._id;
    
+   const loc1 = await City.find({cityText : from});
+   const loc2 = await City.find({cityText : to});
+   let loc1Id, loc2Id;
+   if(loc1.length>0 && loc2.length>0){
+       console.log(loc1)
+       console.log(loc2)
+       loc1Id = loc1[0]._id;
+       loc2Id = loc2[0]._id;
+   }
+   else{
+    res.status(201).json({
+        message : "Root is not available"
+    })
+   }
   
-   console.log("Location1 Id : "+ loc1Id);
-   console.log("Location2 Id : "+ loc2Id);
-  
+   
    Root.find({$or: [{location1 : loc1Id, location2 : loc2Id},{location1 : loc2Id, location2 : loc1Id}]})
     .populate('location1 location2 bus')
     .then((data) => {
