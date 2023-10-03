@@ -7,8 +7,8 @@ const getRootHandler = async (_req,res) => {
    const to = _req.query.to;
    console.log(to)
     if(from && to){
-        console.log(from)
-        console.log(to)
+      //  console.log(from)
+      //  console.log(to)
         if(from == '' || to ==''){ // Simple validation will be changed later
              res.status(500).json({
                  message : " request with Empty Value"
@@ -27,8 +27,8 @@ const getRootHandler = async (_req,res) => {
    const loc2 = await City.find({cityText : to});
    let loc1Id, loc2Id;
    if(loc1.length>0 && loc2.length>0){
-       console.log(loc1)
-       console.log(loc2)
+      // console.log(loc1)
+      // console.log(loc2)
        loc1Id = loc1[0]._id;
        loc2Id = loc2[0]._id;
    }

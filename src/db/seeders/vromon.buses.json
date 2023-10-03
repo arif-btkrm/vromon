@@ -1,101 +1,65 @@
 [{
-  "_id": {
-    "$oid": "6501a828accd4cb8c22972cd"
-  },
+  "_id": "6501a828accd4cb8c22972cd",
   "busName": "Desh Travels",
   "seat": 40,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6501a879accd4cb8c22972d0"
-  },
+  "_id": "6501a879accd4cb8c22972d0",
   "busName": "Eagle Paribahan",
   "seat": 40,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6501a890accd4cb8c22972d2"
-  },
+  "_id": "6501a890accd4cb8c22972d2",
   "busName": "ENA Travels",
   "seat": 30,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6501a8adaccd4cb8c22972d4"
-  },
+  "_id": "6501a8adaccd4cb8c22972d4",
   "busName": "Green Line",
   "seat": 25,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6501a8c5accd4cb8c22972d6"
-  },
+  "_id": "6501a8c5accd4cb8c22972d6",
   "busName": "Hanif Paribahan",
   "seat": 50,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6501a8dfaccd4cb8c22972d8"
-  },
+  "_id": "6501a8dfaccd4cb8c22972d8",
   "busName": "National Travels",
   "seat": 35,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6501a8fbaccd4cb8c22972da"
-  },
+  "_id": "6501a8fbaccd4cb8c22972da",
   "busName": "Saudia Travels",
   "seat": 20,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650d0f78cf9b6c83a5d8dba6"
-  },
+  "_id": "650d0f78cf9b6c83a5d8dba6",
   "busName": "Shyamoli Paribahan",
   "seat": 20,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "busRoot": [],
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650d0f8fcf9b6c83a5d8dba8"
-  },
+  "_id": "650d0f8fcf9b6c83a5d8dba8",
   "busName": "Shohag Express",
   "seat": 20,
-  "vehicleType": {
-    "$oid": "65016eca89390258b0a4e664"
-  },
+  "vehicleType": "65016eca89390258b0a4e664",
   "busRoot": [],
   "__v": 0
 }]

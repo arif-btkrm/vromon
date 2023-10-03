@@ -1,23 +1,17 @@
 [{
-  "_id": {
-    "$oid": "65019ac3d7cef2f959a6bcb7"
-  },
+  "_id": "65019ac3d7cef2f959a6bcb7",
   "roleName": "Admin",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65019aead7cef2f959a6bcb9"
-  },
+  "_id": "65019aead7cef2f959a6bcb9",
   "roleName": "Vendor",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65019af6d7cef2f959a6bcbb"
-  },
+  "_id": "65019af6d7cef2f959a6bcbb",
   "roleName": "Client",
   "status": "active",
   "__v": 0

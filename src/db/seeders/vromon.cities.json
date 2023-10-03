@@ -1,196 +1,152 @@
 [{
-  "_id": {
-    "$oid": "65027e49438422c3c95982cd"
-  },
+  "_id": "65027e49438422c3c95982cd",
   "cityName": "Dhaka",
   "cityText": "dhaka",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65027fa3438422c3c95982cf"
-  },
+  "_id": "65027fa3438422c3c95982cf",
   "cityName": "Benapole",
   "cityText": "benapole",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65027fbb438422c3c95982d1"
-  },
+  "_id": "65027fbb438422c3c95982d1",
   "cityName": "Chittagong",
   "cityText": "chittagong",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65027fd7438422c3c95982d3"
-  },
+  "_id": "65027fd7438422c3c95982d3",
   "cityName": "Bandarban",
   "cityText": "bandarban",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65028005438422c3c95982d5"
-  },
+  "_id": "65028005438422c3c95982d5",
   "cityName": "Cox’s Bazar",
   "cityText": "coxsbazar",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6502801d438422c3c95982d7"
-  },
+  "_id": "6502801d438422c3c95982d7",
   "cityName": "Teknaf",
   "cityText": "teknaf",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65028031438422c3c95982d9"
-  },
+  "_id": "65028031438422c3c95982d9",
   "cityName": "Jessore",
   "cityText": "jessore",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6502804e438422c3c95982db"
-  },
+  "_id": "6502804e438422c3c95982db",
   "cityName": "Sylhet",
   "cityText": "sylhet",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65028061438422c3c95982dd"
-  },
+  "_id": "65028061438422c3c95982dd",
   "cityName": "Mymensingh",
   "cityText": "mymensingh",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650280a0438422c3c95982df"
-  },
+  "_id": "650280a0438422c3c95982df",
   "cityName": "Netrokona",
   "cityText": "netrokona",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650280b1438422c3c95982e1"
-  },
+  "_id": "650280b1438422c3c95982e1",
   "cityName": "Jamalpur",
   "cityText": "jamalpur",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650280c2438422c3c95982e3"
-  },
+  "_id": "650280c2438422c3c95982e3",
   "cityName": "Sherpur",
   "cityText": "sherpur",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650280d0438422c3c95982e5"
-  },
+  "_id": "650280d0438422c3c95982e5",
   "cityName": "Tangail",
   "cityText": "tangail",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65028242438422c3c95982e7"
-  },
+  "_id": "65028242438422c3c95982e7",
   "cityName": "Khulna",
   "cityText": "khulna",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65028252438422c3c95982e9"
-  },
+  "_id": "65028252438422c3c95982e9",
   "cityName": "Rajshahi",
   "cityText": "rajshahi",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "65028260438422c3c95982eb"
-  },
+  "_id": "65028260438422c3c95982eb",
   "cityName": "Dinajpur",
   "cityText": "dinajpur",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6502827b438422c3c95982ed"
-  },
+  "_id": "6502827b438422c3c95982ed",
   "cityName": "Chapai Nawabganj",
   "cityText": "chapainawabganj",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6502828d438422c3c95982ef"
-  },
+  "_id": "6502828d438422c3c95982ef",
   "cityName": "Feni",
   "cityText": "feni",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "6502829e438422c3c95982f1"
-  },
+  "_id": "6502829e438422c3c95982f1",
   "cityName": "Satkhira",
   "cityText": "satkhira",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650282b1438422c3c95982f3"
-  },
+  "_id": "650282b1438422c3c95982f3",
   "cityName": "Agartala",
   "cityText": "agartala",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650282bf438422c3c95982f5"
-  },
+  "_id": "650282bf438422c3c95982f5",
   "cityName": "Kolkata",
   "cityText": "kolkata",
   "status": "active",
   "__v": 0
 },
 {
-  "_id": {
-    "$oid": "650282ce438422c3c95982f7"
-  },
+  "_id": "650282ce438422c3c95982f7",
   "cityName": "Siliguri",
   "cityText": "siliguri",
   "status": "active",

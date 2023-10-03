@@ -60,7 +60,7 @@ router.post('/api/v1/user/signin', signInValidation, isValidate, signInHandler);
 
 // User SignUp of Regester
 router.post('/api/v1/user/signup', signUpValidation, isValidate, signUpHandler);
-router.post('/api/v1/user/addtestadmin', addTestAdminHandler); // think  about it later
+
 
 // Get List of Tickets of a User
 router.get('/api/v1/ticket', isLoggedIn,getTicketHandler);

@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "651bc15d781c6424625de8a6",
+    "name": "Mr. Admin",
+    "phone": "01211100100",
+    "email": "admin@test.com",
+    "password": "$2b$05$DNkKZivy/KnCGjipYze6b.HuFFgOgtWCcmD2TXxw4kH6qdGt.reny",
+    "status": "active",
+    "ticket": [],
+    "userRole": "65019ac3d7cef2f959a6bcb7",
+    "__v": 0
+  },
+  {
+    "_id": "651a4144f89e32a3a4ee729f",
+    "Name": "Mr. User",
+    "phone": "01211100103",
+    "email": "user@test.com",
+    "password": "$2b$10$5q4bSrIxSe//PuYDT3b6Y.1jZWfK92.NeDPxFMXqdYSe6bBearVCu",
+    "status": "active",
+    "ticket": [],
+    "userRole": "65019af6d7cef2f959a6bcbb",
+    "__v": 0
+  }
+]
