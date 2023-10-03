@@ -25,12 +25,12 @@ Content-Type:  application/json
 }
 
 ### 
-// SignIn
+// SignIn as Admin
 POST http://localhost:4000/api/v1/user/signin
 Content-Type:  application/json
 
 {
-    "email" : "arif@fmail.com",
+    "email" : "admin@test.com",
     "password" : "12345"
 }
 

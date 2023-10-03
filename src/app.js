@@ -3,11 +3,12 @@ const cors = require('cors');
 const morgan = require('morgan');
 const router = require('./routes');
 const path = require('path')
+const applyMiddleware = require('./middlewares');
 
 const app = express();
 
 //const port = process.env.PORT || 4000;
-
+applyMiddleware(app);
 
 app.use(cors());
 app.use(morgan('dev'));
