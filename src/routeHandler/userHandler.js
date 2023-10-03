@@ -1,18 +1,23 @@
 
 const User = require("./../models/userModel");
-const bcrypt = require('bcrypt');
+const {validationResult} = require('express-validator')
+
 const JWT = require('jsonwebtoken');
+const {generateHash,hashMatched} = require ('./../utils/hashing')
 
 const signInHandler = (_req,res) => {
+  
     const Email = _req.body.email;
     const PassWord = _req.body.password;
      User.find({email:Email,status:"active"})
     .populate('userRole')
-    .then( async (userData) => {
+    .then( (userData) => {
         //console.log(userData[0].userRole.roleName);
         if(userData.length>0){
            // console.log(userData[0].password)
-            const checkedPassword = await bcrypt.compare(PassWord,userData[0].password);
+           // const checkedPassword = await bcrypt.compare(PassWord,userData[0].password); // need to use hash from util folder
+           const checkedPassword = hashMatched(PassWord,userData[0].password); // need to be tested
+           
            // console.log(checkedPassword)
             if(checkedPassword){
                // console.log("Password Matched")
@@ -48,14 +53,16 @@ const signInHandler = (_req,res) => {
 
 const signUpHandler = async (_req,res) => {
        
-    const encPass = await bcrypt.hash(_req.body.password, 5);
-    const userData = {
+   // const encPass = await bcrypt.hash(_req.body.password, 10); // need to use hash from util folder
+   const encPass = await generateHash(_req.body.password, 10); // need to be tested
+    
+   const userData = {
         Name : _req.body.name,
         phone : _req.body.phone,
         email : _req.body.email,
         password : encPass,
     }
-    //    console.log(userData)
+        console.log(userData)
     const newUser = new User(userData);
 
     await newUser.save()
@@ -64,7 +71,8 @@ const signUpHandler = async (_req,res) => {
             message : "SignUp Successful"
         });
     })
-    .catch(()=>{
+    .catch((err)=>{
+        console.log(err)
         res.status(500).json({
             error : "SignUp Failed"
         })

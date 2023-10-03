@@ -11,6 +11,11 @@ const rootSchema = mongoose.Schema({
         ref: "City",
         require: true
     },
+    price :{
+        type : Number,
+        default : 0,
+        require : true
+    },
     bus : [{
         type : mongoose.Types.ObjectId,
         ref: "Bus"

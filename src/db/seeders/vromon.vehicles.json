@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "65016eca89390258b0a4e664"
+  },
+  "vehicleName": "Bus",
+  "vehicleType": "bus",
+  "status": "active",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65016fe779a386496ed42be3"
+  },
+  "vehicleName": "Train",
+  "vehicleType": "train",
+  "status": "inactive",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6501704879a386496ed42be5"
+  },
+  "vehicleName": "Plane",
+  "vehicleType": "plane",
+  "status": "inactive",
+  "__v": 0
+}]

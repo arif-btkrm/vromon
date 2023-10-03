@@ -28,9 +28,10 @@ const ticketSchema = mongoose.Schema({
         default : 1
     },
     
-    TotalPrice : {
+    totalPrice : {
         type : Number,
-        require : true
+        require : true,
+        default : 0
     }
 });
 

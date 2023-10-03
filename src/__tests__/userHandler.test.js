@@ -1,5 +1,5 @@
 const {signInHandler,signUpHandler} = require('../routeHandler/userHandler');
-const bcrypt = require('bcrypt');
+const {generateHash,hashMatched} = require ('./../utils/hashing')
 
 
 const mockSignupRequest = () => {
@@ -22,13 +22,15 @@ const mockSignupResponse = () => {
 
 describe("SignUp User", () => {
     it("Should SignUp user", async () => {
-        jest.spyOn(bcrypt, "hash").mockResolvedValueOnce("hashedPassword");
+        
+       // jest.spyOn(bcrypt, "hash").mockResolvedValueOnce("hashedPassword");
+        
         const mockReq = mockSignupRequest();
         const mockRes = mockSignupResponse()
 
         await signUpHandler(mockReq,mockRes)
         
         expect (mockRes.status).toHaveBeenCalledWith(201)
-        expect (bcrypt.hash).toHaveBeenCalledWith('12345',5)
+        expect (generateHash).toHaveBeenCalledWith('12345',10)
     })
 })

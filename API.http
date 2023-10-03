@@ -1,0 +1,51 @@
+
+// to check server is running
+GET http://localhost:4000/health
+
+###
+
+
+// to get all bus list
+GET http://localhost:4000/api/v1/bus
+###
+
+// SignUp
+POST http://localhost:4000/api/v1/user/signup
+Content-Type:  application/json
+
+{
+    "name" : "mahim",
+    "phone" : "01211100103",
+    "email" : "itsarif@gmail.com",
+    "password" : "12345"
+}
+
+### 
+// SignIn
+POST http://localhost:4000/api/v1/user/signin
+Content-Type:  application/json
+
+{
+    "email" : "arif@fmail.com",
+    "password" : "12345"
+}
+
+### 
+// Sample Book a ticket
+POST http://localhost:4000/api/v1/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTBiZDE0MTc2MmY0ZTQ5NjU5MDZlZjgiLCJ1c2VyUm9sZSI6IkNsaWVudCIsImlhdCI6MTY5NjI3Mjc3NiwiZXhwIjoxNjk2Mjc2Mzc2fQ.t5WpvRGBPl_zOFxbKo4lQEdtvPs5G9_S1aJY_5U3FiI
+
+{
+    "clientId" : "",
+    "rootId" : "",
+    "busId" : "",
+    
+    "date" : "isoDateString",
+    "quantity" : 2,
+    "totalPrice" : 560
+}
+
+###
+
+
