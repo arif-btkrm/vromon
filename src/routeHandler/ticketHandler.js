@@ -5,6 +5,7 @@ const getTicketHandler = (_req,res) => {
     const userId = _req.userId;
     Ticket.find({clientId : userId})
     .populate('clientId rootId busId')
+    .select({_v : 0, bus : 0})
     .then((data) => {
         res.status(200).json({
             result : data,
@@ -46,7 +47,11 @@ const deleteTicketHandler = (_req,res) => {
 };
 
 const addTicketHandler = (_req,res) => {
-    const data = _req.body;
+    const userId = _req.userId;
+    const data = { clientId : userId,
+                    rootId : _req.body.rootId,
+                    busId : _req.body.busId};
+    
     const newTicket = new Ticket(data);
     newTicket.save()
     .then(()=>{

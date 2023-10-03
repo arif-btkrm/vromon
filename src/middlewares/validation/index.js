@@ -76,19 +76,7 @@ const signUpValidation  = [
     ]
 
     const addTicketValidation = [
-        body('clientId')
-            .trim()
-            .isString()
-            .withMessage('User Id must be a valid ID String')
-            .bail()
-            .custom(async value => {
-                const isValid = mongoose.Types.ObjectId.isValid(value);
-                if (!isValid) {
-                  throw new Error('Use a Valid User Id');
-                }
-              })
-            ,
-            
+        
             body('rootId')
             .trim()
             .isString()
@@ -114,15 +102,18 @@ const signUpValidation  = [
               })
             ,
             body('date')
+            .optional()
             .trim()
             .isString()
-            .withMessage('Root Id must be a valid ID String')
+            .withMessage('Date must be a valid ID String')
             .bail()
             ,
             body('quantity')
+            .optional()
             .isNumeric({ min: 1 })
             ,
             body('totalPrice')
+            .optional()
             .isNumeric({ min: 0 })
         ]
 

@@ -9,7 +9,7 @@ GET http://localhost:4000/health
 GET http://localhost:4000/api/v1/bus
 ###
 
-// to get all bus list
+// to get Root Id And all bus for specific Root
 GET http://localhost:4000/api/v1/root?from=dhaka&to=khulna
 ###
 
@@ -35,21 +35,40 @@ Content-Type:  application/json
 }
 
 ### 
+// SignIn as User
+POST http://localhost:4000/api/v1/user/signin
+Content-Type:  application/json
+
+{
+    "email" : "user@test.com",
+    "password" : "12345"
+}
+
+### 
 // Sample Book a ticket
 POST http://localhost:4000/api/v1/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTBiZDE0MTc2MmY0ZTQ5NjU5MDZlZjgiLCJ1c2VyUm9sZSI6IkNsaWVudCIsImlhdCI6MTY5NjI3Mjc3NiwiZXhwIjoxNjk2Mjc2Mzc2fQ.t5WpvRGBPl_zOFxbKo4lQEdtvPs5G9_S1aJY_5U3FiI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTFhNDE0NGY4OWUzMmEzYTRlZTcyOWYiLCJ1c2VyUm9sZSI6IkNsaWVudCIsImlhdCI6MTY5NjM0NDM5MSwiZXhwIjoxNjk2MzQ3OTkxfQ.9umwf97lilRLUf6O9Wq_u5aPIaua9z4_BtpzOmYH4jY
 
 {
-    "clientId" : "",
-    "rootId" : "",
+    "rootId" : "", 
     "busId" : "",
     
     "date" : "isoDateString",
-    "quantity" : 2,
+    "quantity" : 1,
     "totalPrice" : 560
 }
 
-###
+### 
+// Sample Book a ticket
+get http://localhost:4000/api/v1/ticket
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTFhNDE0NGY4OWUzMmEzYTRlZTcyOWYiLCJ1c2VyUm9sZSI6IkNsaWVudCIsImlhdCI6MTY5NjM0NDM5MSwiZXhwIjoxNjk2MzQ3OTkxfQ.9umwf97lilRLUf6O9Wq_u5aPIaua9z4_BtpzOmYH4jY
+
+### 
+// Sample Book a ticket
+delete http://localhost:4000/api/v1/ticket?id=651c2965aa611dcbb0297da4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTFhNDE0NGY4OWUzMmEzYTRlZTcyOWYiLCJ1c2VyUm9sZSI6IkNsaWVudCIsImlhdCI6MTY5NjM0NDM5MSwiZXhwIjoxNjk2MzQ3OTkxfQ.9umwf97lilRLUf6O9Wq_u5aPIaua9z4_BtpzOmYH4jY
 
 
